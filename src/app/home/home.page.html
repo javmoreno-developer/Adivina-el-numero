@@ -1,20 +1,83 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="mycolor">
     <ion-title>
-      Blank
+      Adivina el numero
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+    <ion-toolbar color="mycolor">
+      <ion-title size="large">Adivina el numero</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-grid>
+      <ion-row id="title">
+        <ion-col>
+          <ion-title>Adivina el numero</ion-title>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12" sizeSm="3">
+          <ion-accordion-group>
+            <ion-accordion value="first">
+              <ion-item slot="header" color="light">
+                <ion-label>Introducir rango</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+
+                <ion-row>
+                  <ion-col>
+                    <ion-item>
+                      <ion-label position="floating">Introduce el minimo</ion-label>
+                      <ion-input type="number" (keyup.enter)="tryNumber()" [(ngModel)]="minNumber"></ion-input>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col>
+                    <ion-item>
+                      <ion-label position="floating">Introduce el maximo</ion-label>
+                      <ion-input type="number" (keyup.enter)="tryNumber()" [(ngModel)]="maxNumber"></ion-input>
+                    </ion-item>
+                  </ion-col>
+                  <ion-col>
+                    <ion-button (click)="rebuildNumber()">Restablecer</ion-button>
+                  </ion-col>
+                </ion-row>
+
+              </div>
+            </ion-accordion>
+            <ion-accordion value="second">
+              <ion-item slot="header" color="light">
+                <ion-label>Como jugar</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                <ion-text>El juego consiste en introducir números con el fin de adivinar cuál es el correcto,después de introducir números en el input, bajo este aparecerá un mensaje avisando de como es el número con respecto al que se quiere adivinar,por defecto el intervalo del número a adivinar es de 0-10,aunque podrá variarse a través del acordeón de arriba.</ion-text>
+              </div>
+            </ion-accordion>
+          </ion-accordion-group>
+        </ion-col>
+
+
+        <ion-col size="12" sizeSm="6" offset="0" offsetSm="2">
+          <ion-item>
+            <ion-label position="floating">Introduce el numero</ion-label>
+            <ion-input type="number" (ionChange)="tryNumber()" (keyup.enter)="tryNumber()" [(ngModel)]="inputNumber">
+            </ion-input>
+          </ion-item>
+          <br>
+          
+          <ion-text *ngIf="estado == 'acertado'"> {{ estado }}</ion-text>
+          <ion-text *ngIf="estado != 'acertado' && estado !='undefined'">El numero introducido es: {{ estado }}</ion-text>
+          <ion-text *ngIf="estado == 'undefined'"> A la espera de un numero</ion-text>
+        </ion-col>
+      </ion-row>
+      
+      
+     
+    </ion-grid>
   </div>
 </ion-content>

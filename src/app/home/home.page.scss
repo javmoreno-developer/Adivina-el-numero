@@ -25,3 +25,20 @@
 #container a {
   text-decoration: none;
 }
+
+ion-grid {
+  height: 90vh;
+}
+
+#title {
+  margin: 7vh;
+}
+
+#status {
+  text-align: start;
+}
+
+
+ion-toolbar {
+  background-color: var(--ion-color-mine-toolbar);
+}
