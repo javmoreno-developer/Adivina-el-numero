@@ -55,9 +55,19 @@
                 <ion-label>Como jugar</ion-label>
               </ion-item>
               <div class="ion-padding" slot="content">
-                <ion-text>El juego consiste en introducir números con el fin de adivinar cuál es el correcto,después de introducir números en el input, bajo este aparecerá un mensaje avisando de como es el número con respecto al que se quiere adivinar,por defecto el intervalo del número a adivinar es de 0-10,aunque podrá variarse a través del acordeón de arriba.</ion-text>
+                <ion-text>El juego consiste en introducir números con el fin de adivinar cuál es el correcto,tras introducir números en el input, bajo este aparecerá un mensaje avisando de como es el número con respecto al que se quiere adivinar,por defecto el intervalo del número a adivinar es de 0-10,aunque podrá variarse a través del acordeón de arriba.</ion-text>
               </div>
             </ion-accordion>
+
+            <ion-accordion value="third">
+              <ion-item slot="header" color="light">
+                <ion-label>Solucion</ion-label>
+              </ion-item>
+              <div class="ion-padding" slot="content">
+                <ion-text>El numero a adivinar es: <span id="textAnimated">{{respuesta}}</span></ion-text>
+              </div>
+            </ion-accordion>
+
           </ion-accordion-group>
         </ion-col>
 
@@ -70,9 +80,9 @@
           </ion-item>
           <br>
           
-          <ion-text *ngIf="estado == 'acertado'"> {{ estado }}</ion-text>
-          <ion-text *ngIf="estado != 'acertado' && estado !='undefined'">El numero introducido es: {{ estado }}</ion-text>
+          <ion-text *ngIf="estado == 'acertado'"> Has acertado </ion-text>
           <ion-text *ngIf="estado == 'undefined'"> A la espera de un numero</ion-text>
+          <ion-text *ngIf="estado != 'acertado' && estado !='undefined'">El numero introducido es: {{ estado }}</ion-text>
         </ion-col>
       </ion-row>
       

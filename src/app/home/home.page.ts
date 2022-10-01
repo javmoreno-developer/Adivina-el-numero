@@ -19,8 +19,11 @@ export class HomePage {
 
   rebuildNumber() {
     this.respuesta = Math.floor(Math.random() * this.maxNumber) + this.minNumber;
-    this.tryNumber();
-    console.log(this.respuesta);
+    if(this.estado != "undefined") {
+
+      this.tryNumber();
+    }
+    //console.log("%c Pista : El numero a adivinar es el "+this.respuesta, "color: red; font-family:'Calibri'");
   }
 
   tryNumber() {

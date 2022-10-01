@@ -42,3 +42,22 @@ ion-grid {
 ion-toolbar {
   background-color: var(--ion-color-mine-toolbar);
 }
+
+/* Animacion */
+@keyframes rotate {
+	100% {
+		transform: rotate(1turn);
+	}
+}
+
+#textAnimated {
+	animation: color-change 2s infinite;
+  font-weight: bold;
+}
+@keyframes color-change {
+  0% { color: red; }
+  50% { color: blue; }
+  75% { color: green; }
+  100% { color: red; }
+}
+
