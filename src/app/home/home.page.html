@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="mycolor">
-    <ion-title>
+  <ion-toolbar color="mycolor" appToolDirective>
+    <ion-title appTitle>
       Adivina el numero
     </ion-title>
   </ion-toolbar>
@@ -83,6 +83,9 @@
           <ion-text *ngIf="estado == 'acertado'"> Has acertado </ion-text>
           <ion-text *ngIf="estado == 'undefined'"> A la espera de un numero</ion-text>
           <ion-text *ngIf="estado != 'acertado' && estado !='undefined'">El numero introducido es: {{ estado }}</ion-text>
+            <br>
+            <br>
+          <ion-text>El rango de numeros a adivinar es {{minNumber}} - {{maxNumber}}</ion-text>
         </ion-col>
       </ion-row>
       

@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { ToolDirectiveDirective } from './directives/tool-directive.directive';
+import { TitleDirective } from './directives/title.directive';
 
 
 @NgModule({
@@ -14,6 +16,6 @@ import { HomePageRoutingModule } from './home-routing.module';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, ToolDirectiveDirective,TitleDirective]
 })
 export class HomePageModule {}

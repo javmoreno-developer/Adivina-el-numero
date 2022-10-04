@@ -40,7 +40,11 @@ ion-grid {
 
 
 ion-toolbar {
-  background-color: var(--ion-color-mine-toolbar);
+  //background-color: var(--ion-color-mine-toolbar);
+  color: white;
+  background: linear-gradient(to right, #000000, #443030, #875e53, #c89671, #ffd791);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
 }
 
 /* Animacion */
@@ -61,3 +65,21 @@ ion-toolbar {
   100% { color: red; }
 }
 
+
+.transicion {
+  //transition: all 1s; 
+  text-align: end;
+  background-color: var(--ion-color-mine-toolbar);
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
